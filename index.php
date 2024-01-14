@@ -11,4 +11,7 @@ sotto la panca la capra crepa.';
 
 ?>
 
+<h1> Stringa: </h1>
+<p> <?php echo $stringa ?></p>
+
 
