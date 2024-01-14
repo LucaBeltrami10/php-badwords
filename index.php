@@ -9,7 +9,11 @@ sotto la panca la capra crepa.
 Sopra la panca la capra campa,
 sotto la panca la capra crepa.';
 
-$parolaCensurata = $_GET['badword'];
+$parolaCensurata = trim($_GET['badword']);
+$lunghezzaParolaCensurata = strlen($parolaCensurata);
+
+$stringaCensurata = str_replace($parolaCensurata, "***", $stringa);
+$ripetizioneBadword = substr_count($stringa, $parolaCensurata)
 
 ?>
 
@@ -24,6 +28,11 @@ $parolaCensurata = $_GET['badword'];
     <input type="text" id="badword" name="badword">
 </form>
 
-<p>parola da censurare = <?php echo $parolaCensurata ?></p>
+<p>Parola da censurare = "<?php echo strtoupper($parolaCensurata) ?>" , Lunga <?php echo $lunghezzaParolaCensurata ?> caratteri, Ripetuta <?php echo $ripetizioneBadword ?> volte. </p>
+
+<h1>Stringa censurata: </h1>
+<p><?php echo $stringaCensurata ?></p>
+<p>Nuova lunghezza stringa senza parole censurate: <?php echo strlen(trim($stringa)) - $ripetizioneBadword ?></p>
+
 
 
