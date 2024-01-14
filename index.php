@@ -9,6 +9,8 @@ sotto la panca la capra crepa.
 Sopra la panca la capra campa,
 sotto la panca la capra crepa.';
 
+$parolaCensurata = $_GET['badword'];
+
 ?>
 
 <h1> Stringa proposta: </h1>
@@ -21,5 +23,7 @@ sotto la panca la capra crepa.';
     <label for="badword">Parola da censurare:</label>
     <input type="text" id="badword" name="badword">
 </form>
+
+<p>parola da censurare = <?php echo $parolaCensurata ?></p>
 
 
